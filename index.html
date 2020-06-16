@@ -7,18 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
     <meta name="theme-color" content="#2196F3">
 
-<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> 
-
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
      
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src='moment.js'></script>
-<script src='momenttimezone.js'></script>
+
 
 <style>html, body{
 
-  font-family: 'Varela Round', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   display: flex; 
   flex-direction: column;
   } 
@@ -152,9 +149,9 @@
       height: 39px;
       border: 0;
       border-radius: 30px; 
-      font-family: 'Varela Round', sans-serif; 
+      font-family: 'Montserrat', sans-serif; 
       /*background: #f3eded; */
-      color: #0000;
+      color: #ffff;
       display: block;
       margin-bottom: 9px;
       background: #3e414570;
@@ -164,16 +161,16 @@
   
   
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      font-family: 'Varela Round', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       opacity: 1; /* Firefox */
     }
     
     :-ms-input-placeholder { /* Internet Explorer 10-11 */
-      font-family: 'Varela Round', sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }
     
     ::-ms-input-placeholder { /* Microsoft Edge */
-      font-family: 'Varela Round', sans-serif;
+      font-family: 'Montserrat', sans-serif;
     }   
   
   
@@ -389,7 +386,33 @@ align-self: center;
 
 #fiveDayTriHourlyForecastTitle{
 align-self: center;
+}  
+
+
+
+.app-footer {
+
+    margin-bottom: 112px;
+    background-image: url(gold-foil-texture.jpg);
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 13px;
+    text-align: center;
+    font-weight: lighter;
+    text-transform: uppercase;
+    /* background-repeat: repeat; */
+    background-size: 100%;
+    /* margin-bottom: 9px; */
+    margin-top: 51px;
+}
+  
 } 
+
+a:link {
+  text-decoration: none;
+}
 
   </style>
 
@@ -398,11 +421,15 @@ rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNE
 crossorigin="anonymous">---->
 
 <!---<link rel='stylesheet' href='weatherLatest.css'>-----> 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
-<!---<script src='moment.js'></script>
-<script src='momenttimezone.js'></script>---->
 
-    <title>Weather App Sceendy</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>  
+<!----<script src='moment.js'></script>
+<script src='momenttimezone.js'></script>---> 
+
+
+    <title>Ambient App </title>
   </head>
 
 
@@ -420,8 +447,19 @@ crossorigin="anonymous">---->
       <!----<img src="logoPlant500px.png" class="logo"/> ------------>
       <p id='appName'>Ambient.</p> 
       <div class="inputAndMagnifyingBtn">
-      <input type="text" class="search-box" placeholder="Search a city..." onclick='clearInputNdisplay()'spellcheck="false" results="0"><!---<button type="submit"><img class="search" src="search.png"/></button>----> 
+      <!---<input type="text" class="search-box" placeholder="Search a city..." onclick='clearInputNdisplay()'spellcheck="false" results="0"><button type="submit"><img class="search" src="search.png"/></button>---->  
+      <input type="text" class="search-box" placeholder="Search a city..." spellcheck="false" results="0" autofocus>
+    </div> 
+
+    <div id='tryingForm'> 
+      <form action="ambient2.html" method="GET">
+        <input type="text" name="searchedCityName" />
+        <input type="submit" value="Submit" />
+    </form>
+
     </div>
+
+
     </div>
   </header>
 
@@ -434,7 +472,7 @@ crossorigin="anonymous">---->
       <p class='hi-low'>12°c /17°c</p>  
     </div>
     <!-----<img src="sky.png" class='icon' alt="" />---->
-    <img src="http://openweathermap.org/img/wn/10d@2x.png" class='icon' alt="" /> 
+    <img src="https://openweathermap.org/img/wn/10d@2x.png" class='icon' alt="" />
   </div> 
 
 
@@ -500,7 +538,14 @@ crossorigin="anonymous">---->
 
 <!-------------------<div id='fivedayforecast'> 
       <img src='cloud (2).png' id='cloudForecastBtn'>
-    </div>-- NOT needed as we will try to show graphs on separate page!-------->
+    </div>-- NOT needed as we will try to show graphs on separate page!--------> 
+
+
+
+    
+
+
+<footer class="app-footer"><a href="ambient2.html">Visit Ambient.Com</a></footer> 
 </div> 
 
 
@@ -508,12 +553,12 @@ crossorigin="anonymous">---->
 
   <img id='cloudForecastBtn'src="sky.png">
  <p id="fiveDayTriHourlyForecastTitle">Click the cloud to view your 5 day / 6-hourly weather forecast.</p>
-  <div id='listDiv2'></div>
+  <div id='listDiv2'></div> 
   </div>---->
 
 
 
-   <footer class="app-footer"><a href="ambient2.html">Visit Ambient.Com</a></footer> 
+<!----<footer class="app-footer"><a href="ambient2.html">Visit Ambient.Com</a></footer>---->
 
 
 
@@ -615,7 +660,11 @@ const api= {
         get5DayForecast(searchBox.value);
         console.log(searchBox.value); 
       
-        arrayOfTempsNDates = []; 
+        arrayOfTempsNDates = [];  
+
+
+        localStorage["key"] = searchBox.value; 
+        console.log(localStorage["key"] + " this is the local storage!");
         ul.style.display='none'; 
 
         
@@ -744,7 +793,7 @@ else if(hourOfSearchedCity == 29){
 
           let weatherIcon =document.querySelector('.icon'); 
 
-          weatherIcon.src=" http://openweathermap.org/img/wn/"+ resp.weather[0].icon +'.png';
+          weatherIcon.src=" https://openweathermap.org/img/wn/"+ resp.weather[0].icon +'.png';
 
 
           let weatherConditions = document.querySelector('.weather'); 
@@ -918,6 +967,7 @@ else if(hourOfSearchedCity == 29){
 
 
             uvNum.innerText =`Daily UV Index Number: ${respz.current.uvi}`;    
+
  
             //This below part is to display the uv message when we click our uv button:
  
@@ -1617,7 +1667,7 @@ searchBox.addEventListener("focus", function(){
 
    
  console.log('ok now on focus clear the li')  
- location.reload();  
+ location.reload();  //----IMPORTANT-Only need to do this to reload the pageif we're using chartjs & need to stop charts flickering!!
 
  //chart.update(); 
  //$("#listDiv2").remove(); 
@@ -1675,25 +1725,6 @@ console.log(arrayOfTempsNDates);
 
 
 
-function dateBuilder (d) {
-
-let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
-
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
-
-let day = days[d.getDay()]; 
-
-
-let month = months[d.getMonth()]; 
-
-
-let date = d.getDate();
-
-let year = d.getFullYear();
-
-return `${day}, ${month} ${date}, ${year} `
-
-}
 
 
 
@@ -1701,8 +1732,6 @@ return `${day}, ${month} ${date}, ${year} `
 function clearInputNdisplay(){ 
 
 searchBox.value="";    
-
-
 
 
 } 
