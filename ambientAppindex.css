@@ -83,8 +83,11 @@ html, body{
         
       
       /* color: #ffff; */
+         
+       background-color: #36096d;
+       background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
        color: #ffff;
-      background-image: url('gold-foil-texture.jpg');
+     /* background-image: url('gold-foil-texture.jpg');*/
       background-repeat: repeat;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -221,7 +224,9 @@ html, body{
         font-family: 'Montserrat', sans-serif;
         font-size: 24px;  
         margin: 4px;
-        color: #ffff;
+        color: #ffff; 
+        background-color: #36096d;
+        background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
       } 
     
     
@@ -229,7 +234,9 @@ html, body{
         font-family: 'Montserrat', sans-serif;
         font-size:22px;
         font-weight: bold; 
-        margin: 4px;
+        margin: 4px; 
+        background-color: #36096d;
+        background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
         color: #ffff;
       }  
     
