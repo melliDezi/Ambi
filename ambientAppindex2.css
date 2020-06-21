@@ -73,7 +73,7 @@ html, body{
 
 
       background-color: #36096d;
-    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+   background-image: linear-gradient(315deg, #afa0c1 0%, #37d5d6 74%);
     color: #ffff;
     /* background-image: url(gold-foil-texture.jpg); */
     background-repeat: repeat;
@@ -95,7 +95,7 @@ html, body{
       /* color: #ffff; */
 
       background-color: #36096d;
-    background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
+    background-image: linear-gradient(315deg, #752ad0 0%, #37d5d6 74%);
     color: #ffff;
     /* background-image: url(gold-foil-texture.jpg); */
     background-repeat: repeat;
@@ -160,7 +160,8 @@ html, body{
         color: #ffff;
         display: block;
         margin-bottom: 9px;
-        background: #3e414570;
+        background: #3e414570; 
+        background-image: linear-gradient(315deg, #752ad0 7%, #37d5d6 74%);
   
         
     } 
@@ -345,7 +346,7 @@ html, body{
         /*background-image: url('gold-foil-texture.jpg');*/
 
         background-color: #36096d;
-       background-image: linear-gradient(315deg, #752ad0 0%, #37d5d6 74%);
+       background-image: linear-gradient(315deg, #752ad0 7%, #37d5d6 74%);
       
     /* background-image: url(gold-foil-texture.jpg); */
     background-repeat: repeat;
@@ -465,7 +466,8 @@ html, body{
       /* display: block; */
       margin-bottom: 9px;
       background: #3e414570;
-      text-align: center;
+      text-align: center; 
+      background-image: linear-gradient(315deg, #752ad0 7%, #37d5d6 74%);
   } 
   
   
@@ -484,7 +486,7 @@ html, body{
       border-radius: 30px;
       font-family: 'Montserrat', sans-serif;
       /* background: #f3eded; */
-      color: #d38f41c4;
+      color: #ffff;
       /* display: block; */
       margin-bottom: 9px;
       background: #3e414570;
