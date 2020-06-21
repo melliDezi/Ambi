@@ -5,9 +5,9 @@ let airQualBtn = document.getElementById('clickMe1');
            let UVBlurb =document.getElementById('UVBlurb')
 
 
-           const searchBox = document.getElementById('searchBox');
+           //const searchBox = document.getElementById('searchBox');
       
-      searchBox.addEventListener('keypress', setQuery); 
+      //searchBox.addEventListener('keypress', setQuery); 
 /*
 if(window.chart && window.chart !== null){ 
     console.log('time to destroy chart'); 
@@ -58,7 +58,10 @@ const api= {
         console.log('yello');   
 
 
-console.log('ze sweetest peaches');    
+
+           const searchBox = document.getElementById('searchBox');
+      
+      searchBox.addEventListener('keypress', setQuery); 
 
 
 /*
@@ -99,7 +102,7 @@ if(window.chart && window.chart !== null){
           
 
 
-const api= {
+/*const api= {
       
       key:"5e4558760b4e3c113797ae8bea9ee0be", 
       
@@ -112,7 +115,7 @@ const api= {
 
       key:"a7977a94-bb99-4d8a-8691-b9feb4fbeced"
 
-     } 
+     } */
 
       
       
