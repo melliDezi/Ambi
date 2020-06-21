@@ -520,7 +520,7 @@ else if(hourOfSearchedCity == 29){
            fetch(`https://api.airvisual.com/v2/nearest_city?lat=${resp.coord.lat}&lon=${resp.coord.lon}&key=${IQApi.key}`, requestOptions)  
            .then(response => response.text())
            .then((result) => {console.log(JSON.parse(result)); let resultz = (JSON.parse(result)); let airQuality = document.querySelector('.airQuality'); 
-           console.log(resultz); 
+          // console.log(resultz); 
           airQuality.innerText =`Current air quality index is ${resultz.data.current.pollution.aqius}`; 
           //airQualityIcon.src='medical.png'; 
  
