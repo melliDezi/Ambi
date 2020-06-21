@@ -1,4 +1,56 @@
 
+let airQualBtn = document.getElementById('clickMe1');  
+           let airQualBlurb = document.getElementById('airQualBlurb'); 
+
+           let UVBlurb =document.getElementById('UVBlurb')
+
+
+           const searchBox = document.getElementById('searchBox');
+      
+      searchBox.addEventListener('keypress', setQuery); 
+/*
+if(window.chart && window.chart !== null){ 
+    console.log('time to destroy chart'); 
+    window.chart.destroy();
+    }
+    
+    
+         window.myChart ;  */
+    
+    
+    
+        
+          let datesArray =[]; 
+          let tempsArray =[];  
+         // let humidityArray =[];
+    
+          
+
+          const synth = window.speechSynthesis;
+          
+
+
+const api= {
+      
+      key:"5e4558760b4e3c113797ae8bea9ee0be", 
+      
+      base:"https://api.openweathermap.org/data/2.5/"
+      
+      }   
+
+
+      const IQApi = {
+
+      key:"a7977a94-bb99-4d8a-8691-b9feb4fbeced"
+
+     } 
+
+      
+
+
+
+
+
      window.onload=function(){
         
         
@@ -9,7 +61,7 @@
 console.log('ze sweetest peaches');    
 
 
-
+/*
 let airQualBtn = document.getElementById('clickMe1');  
            let airQualBlurb = document.getElementById('airQualBlurb'); 
 
@@ -28,7 +80,7 @@ if(window.chart && window.chart !== null){
     }
     
     
-         window.myChart ;  */
+         window.myChart ;  
     
     
     
@@ -43,7 +95,7 @@ if(window.chart && window.chart !== null){
           let listDiv2 = document.getElementById('listDiv2'); 
           
 
-          const synth = window.speechSynthesis;
+          const synth = window.speechSynthesis;*/
           
 
 
