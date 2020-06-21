@@ -1,0 +1,970 @@
+﻿<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+
+  <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js"></script>   
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.31/moment-timezone-with-data.js'></script> 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+     
+
+<style>html, body{
+
+  font-family: 'Montserrat', sans-serif;
+  display: flex; 
+  flex-direction: column;
+
+   flex: 1 0 auto;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    color:white; 
+    background-repeat: no-repeat; 
+    background-size: 132%;
+  } 
+
+  
+  .content{
+   
+    flex: 1 0 auto;
+flex: 1 0 auto;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    color:white;
+
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  *{ 
+  
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+  
+  
+  } 
+  
+  
+  .container{
+  
+      width: 90;
+      margin: 0 auto;
+      padding: 10px;
+      overflow: none;
+  } 
+  
+  
+  .app-header{
+      
+   text-align: center;
+     
+  } 
+
+
+
+  .app-header .logo{
+      width: 170px;
+      margin-bottom: 16px;
+  } 
+  
+   #appName{
+  
+    /* background-image: url('gold-foil-texture.jpg');
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/ 
+
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #7955a5 0%, #37d5d6 74%);
+    background-clip: text;
+    
+    font-size: 32px;
+    text-align: center;
+    font-weight: lighter;
+    text-transform: uppercase;
+    /* background-repeat: repeat; */
+    background-size: 100%;
+   
+    margin-top: 20px;
+    margin-bottom: 9px; 
+
+
+
+    background-size: 100%;
+    background-repeat: repeat;
+    color: #ffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   }
+
+
+
+  #welcome{ 
+
+/*background-image: url(gold-foil-texture.jpg);*/
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 13px;
+    text-align: center;
+    align-self:center;
+    font-weight: lighter;
+    text-transform: uppercase;
+    /* background-repeat: repeat; */
+    background-size: 100%;
+    margin-bottom: 9px;
+    margin-top: 18px;
+    width: 200px;
+
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #7955a5 0%, #37d5d6 74%);
+} 
+
+#tryingForm{
+
+
+
+  text-align: center;
+
+  background-color: #36096d;
+    background-image: linear-gradient(315deg, #7955a5 0%, #37d5d6 74%);
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+
+
+#getSearchedCity{
+   outline: none;
+    padding: 7px;
+    width: 300px;
+    text-align: center;
+    height: 27px;
+    border: 0;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: capitalize;
+    /* background: #f3eded; */
+    
+    /* display: block; */
+    margin-top: 12px;
+    margin-bottom: 12px;
+    background: #3e414570;
+
+    font-weight: lighter;
+    
+
+    /*background-image: url(gold-foil-texture.jpg);*/
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+   
+  
+    font-weight: lighter;
+
+    
+}
+
+
+
+
+#submitBtn{
+
+    outline: none;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    height: 27px;
+    border: 0;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    /* background: #f3eded; */
+    color: #ffff;
+    /* display: block; */
+    margin-bottom: 9px;
+    background: #3e414570
+
+    
+}
+
+
+
+
+#cityName{
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    
+    font-weight: lighter;
+    margin-top: 70px;
+    margin-bottom: 14px; 
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #7955a5 0%, #37d5d6 74%);
+
+    /*background-image: url(gold-foil-texture.jpg);*/
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+   
+  
+    
+    text-transform: uppercase;
+    /* background-repeat: repeat; */
+    background-size: 100%
+
+}
+
+
+
+#cityNCountryName{
+  
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    /* margin-top: 70px; */
+    margin-bottom: 14px;
+    /*background-image: url(gold-foil-texture.jpg);*/
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: lighter;
+    text-transform: uppercase;
+    /* background-repeat: repeat; */
+    background-size: 100%;
+
+
+} 
+
+.time{
+
+
+  font-weight: lighter;
+    text-transform: uppercase;
+}
+
+
+#sunriseNSet{
+
+margin-top: 70px; 
+margin-bottom: 45px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+font-weight: lighter;
+text-transform: uppercase;
+
+grid-gap: 50px;
+text-align: center;
+
+}
+
+
+
+.sunrise{
+
+  font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 16px;
+    /*background: #0b0b0c3b;*/
+    border-radius: 15px;
+    
+    padding-top: 9px;
+    padding: 10px;
+    margin-left: 15px;
+} 
+
+
+.sunset{
+
+  font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 16px;
+    /*background: #0b0b0c3b;*/
+    border-radius: 15px;
+    
+    padding-top: 9px;
+    padding: 10px;
+    margin-right: 15px;
+} 
+
+
+
+
+
+#sevenDayForecast{ 
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: lighter;
+    text-transform: uppercase;
+    grid-gap: 50px;
+    text-align: center;
+    list-style: none;
+    margin-top: 130px;
+    list-style-type: none;
+    padding: 16px;
+    margin-left: 9px;
+    margin-right: 9px;
+
+    background-color: #36096d;
+    background-image: linear-gradient(315deg, #7955a5 0%, #37d5d6 74%);
+    /* background-image: linear-gradient(315deg, #faac88 0%, #f7b689 30%,#faac88 74%); */
+    /* background-image: url(gold-foil-texture.jpg); */
+    background-repeat: no-repeat;
+    font-size: 15px;
+    text-align: center;
+    font-weight: lighter;
+    text-transform: uppercase;
+    /* background-repeat: repeat; */
+    background-size: 100%;
+    background-repeat: repeat;
+    color: #ffff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}  
+
+
+ul{ 
+
+
+
+  list-style-type: none;
+  background: #1d20243d;
+    padding: 16px;
+    border-radius: 15px;
+}
+
+
+
+
+
+#chartCanvasDiv{
+
+  margin-left: -31px;
+}
+
+
+
+#linkToMainPg {
+
+
+  margin-bottom: 112px;
+    background-image: url(gold-foil-texture.jpg);
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 13px;
+    text-align: center;
+    font-weight: lighter;
+    text-transform: uppercase;
+    /* background-repeat: repeat; */
+    background-size: 100%;
+    /* margin-bottom: 9px; */
+    margin-top: 51px;
+
+}
+</style> 
+
+<title>Weather App Sceendy</title>
+  </head>
+
+
+<body>  
+
+<!-------------------------<div id="splash"> 
+  <img src="img/logo.png" class="logo">
+</div>------------------> 
+
+
+<div class="content"> 
+  <header class="app-header"> 
+    <div class="container">  
+      <p id='appName'>Ambient.</p>  
+    </div> 
+
+    
+  </header> 
+
+   <p id="welcome">Welcome to a Smarter Way of Life.</p>
+</div> 
+
+<h3 id='cityName'>Press Enter to View Charts For: </h3> 
+
+<div id='tryingForm'> 
+  <form action="ambient2.html" method="GET">
+    <input id="getSearchedCity" type="text" name="searchedCityName" />
+    <input id='submitBtn' type="submit" value="ENTER" placeholder='Enter'/> 
+</form> 
+
+<h3 id='cityNCountryName'>City and Country:</h3>
+
+<h3 class='time'>Current time:</h3> 
+
+
+<div id='sunriseNSet'>
+   <h3 class='sunrise'>Sunrise:</h3>
+
+   <h3 class='sunset'>Sunset:</h3>
+</div> 
+
+
+
+
+
+<div id='sevenDayForecast'></div>
+
+<a href='index.html' id='linkToMainPg'>Return to Main Page</a>
+<!-------------Charts & Graphs Below ----------------------->
+
+
+<div id='chartCanvasDiv'>
+  <canvas id="myChart" width="500" height="400"></canvas> 
+  </div> 
+  
+  
+   <!----- <div id='chartCanvasDiv2'>
+      <canvas id="myHumidityChart" width="400" height="200"></canvas> 
+      </div> 
+  
+  
+  
+      <div id='chartCanvasDiv3'>
+        <canvas id="myChart3" width="400" height="200"></canvas> 
+        </div>---------------->
+
+
+
+
+
+
+
+
+
+<script>
+
+/*let cityNameValue= localStorage["key"];  
+
+let cityName=document.getElementById('cityName'); 
+
+cityName.innerHTML =cityNameValue;*/ 
+
+let search=document.getElementById('getSearchedCity');
+
+
+let cityNamee= search.value;
+
+
+const api= {
+      
+      key:"5e4558760b4e3c113797ae8bea9ee0be", 
+      
+      base:"https://api.openweathermap.org/data/2.5/"
+      
+      }   
+
+
+
+
+      const IQApi = {
+
+     key:"a7977a94-bb99-4d8a-8691-b9feb4fbeced"
+
+       }     
+
+
+
+
+       let cityNCountryName=document.getElementById('cityNCountryName'); 
+
+
+        const submitBtn =document.getElementById('submitBtn'); 
+
+
+
+
+
+
+
+
+
+        if(window.chart && window.chart !== null){ 
+
+
+console.log('time to destroy chart'); 
+window.chart.destroy();
+}
+
+
+     window.myChart ;  
+
+
+
+      let arrayOfTempsNDates =[];   
+      let datesArray =[]; 
+      let tempsArray =[];  
+      let humidityArray =[];
+
+      var ul = document.createElement('ul'); 
+      let uli =document.createElement('ul');
+      var listDiv = document.getElementById('listDiv'); 
+      let listDiv2 = document.getElementById('listDiv2'); 
+      
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', function getQueryVariable(cityNamee) { 
+
+
+  
+
+
+    
+
+
+    var query = window.location.search.substring(1); 
+
+    console.log(query); 
+
+    var vars = query.split('&');
+
+    console.log(vars);
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+
+        console.log(pair);  
+
+        console.log(pair[1]);  
+
+        for(var j=0; j<pair.length; j++){
+
+          var splitCityTwoWords= pair[1].split('+');
+          console.log(splitCityTwoWords);
+        } 
+
+        for(let k=0;k<splitCityTwoWords.length; k++){  
+
+          var str = '';
+
+          let getSearchedCity=document.getElementById("getSearchedCity"); 
+
+          if(splitCityTwoWords.length === 1){
+
+            getSearchedCity.value = splitCityTwoWords + '';
+
+          } 
+          else if(splitCityTwoWords.length === 2){
+
+        
+
+        //cityName.innerHTML =pair[1];  
+
+        getSearchedCity.value=  str + splitCityTwoWords[0] +' '+splitCityTwoWords[1]; 
+
+          } else if (splitCityTwoWords[2] ==undefined){
+
+            getSearchedCity.value =  str + splitCityTwoWords[0] + ' ' + splitCityTwoWords[1] ;
+
+          } else if(splitCityTwoWords[2] !==undefined){
+
+
+
+            getSearchedCity.value =  str + splitCityTwoWords[0] + ' ' + splitCityTwoWords[1] +  ' ' + splitCityTwoWords[2] ;
+          } else{
+
+
+            getSearchedCity.value ='Please enter a valid city name.'
+          } 
+
+          console.log(getSearchedCity.value +' right here!') 
+
+
+          let citySearched =getSearchedCity.value;
+        
+            
+
+          console.log('Query variable %s not found', citySearched);   
+
+
+
+
+          console.log('hello yall');
+            
+
+            cityNCountryName.innerHTML = citySearched;
+
+            function getResults(citySearched) { 
+           console.log('whuuuuuuh?');
+           fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citySearched}&units=metric&APPID=5e4558760b4e3c113797ae8bea9ee0be`) //send the apirequest when u type in a cty & hit enter
+          .then(function(resp) {return resp.json();}) //THEN if it works,  get the response back in json format
+           .then(displayResults);//THEN if that works, run the displayResults function(which hs access to the query we're passing into this getResults()func) 
+            }   
+
+
+
+
+
+            function displayResults(resp) { 
+          cityNCountryName.innerHTML=`${resp.name}, ${resp.sys.country}`;
+
+            console.log('did u get the city?')
+
+
+                let timestamp = `${resp.dt}`; 
+
+                console.log(`WHOOHOO ${timestamp}`)  
+
+
+
+                let lat = resp.coord.lat;  
+           let lon = resp.coord.lon;   
+ 
+           let cityName = resp.name;
+           console.log(`latitude is ${lat} & longitude is ${lon} for ${resp.name}`);   
+        
+
+
+
+
+
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${api.key}&units=metric`)
+           //fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=13.75&lon=100.52&appid=${api.key}`)
+          .then(function(respz){return respz.json();}) 
+          .then(function(respz){ 
+            console.log(respz)
+            console.log(respz.timezone); 
+
+            
+            
+    
+             
+            for(let i=0; i<respz.daily.length; i++){
+
+              //console.log(respz.daily[i].dt)  
+
+
+              let secondsToMills = respz.daily[i].dt * 1000;  
+
+            let newDate= new Date(secondsToMills).toISOString(); 
+
+            let timez= moment.tz(newDate, respz.timezone); 
+
+            //let timeFormatted = timez.format('MMMM Do YYYY, h:mm a');  
+
+            let timeFormatted= timez.format('dddd, Do, h:mm a'); 
+
+            //console.log(timeFormatted);  
+
+            datesArray.push(timeFormatted);   
+
+            //console.log('this is the datesArray ' + datesArray);  
+
+            let dailyTemps = respz.daily[i].temp.day; 
+            tempsArray.push(dailyTemps);   
+
+            //console.log(dailyTemps +": " + timeFormatted);
+
+            var sevenDayDiv = document.getElementById('sevenDayForecast');
+                var ul = document.createElement('ul'); 
+                sevenDayDiv.appendChild(ul);   
+
+                var li = document.createElement('li');
+                li.innerHTML = `Temp: ${dailyTemps} Date: ${timeFormatted}`;
+
+                ul.appendChild(li);
+
+             
+
+    }  
+        
+
+
+    
+   // for(let j=0; j<respz.daily.length; j++){ 
+
+
+
+
+                  
+
+                /*for(let j=0; j<respz.daily.length; j++){ 
+
+
+                  let dailyTemps = respz.daily[j].temp.day;
+
+                  console.log(respz.daily[j].temp.day + ' Hereare the temps')
+
+                  tempsArray.push(dailyTemps);  
+
+
+
+                }*/
+
+                 
+                
+                
+                
+                
+                
+                /*datesArray.forEach(function (item) {
+              
+
+              /*var sevenDayDiv = document.getElementById('sevenDayForecast');
+               var ul = document.createElement('ul'); 
+               sevenDayDiv.appendChild(ul); 
+                
+             
+                var li = document.createElement('li');
+                li.innerHTML += item;  
+               
+                tempsArray.forEach(function(itemTemp){   
+                 
+               
+                 var li2 = document.createElement('li');
+                 li2.innerHTML += itemTemp;   
+ 
+              
+ 
+                 var sevenDayDiv = document.getElementById('sevenDayForecast');
+                var ul = document.createElement('ul'); 
+                sevenDayDiv.appendChild(ul);  
+                ul.appendChild(li); 
+               
+                 
+               }) 
+               //document.getElementById('showArray').innerHTML= item;
+                 });    */
+
+
+
+                
+
+
+
+
+         
+
+
+
+
+                 window.myChart ;  
+
+             
+                 var ctx = document.getElementById('myChart').getContext('2d'); 
+
+                 var gradient = ctx.createLinearGradient(500, 0, 100, 0);
+        gradient.addColorStop(0, "#37d5d6");
+        gradient.addColorStop(0.3, "#f49080");
+        gradient.addColorStop(0.4, "#80b6f4");
+        gradient.addColorStop(0.5, "#37d5d6");
+        gradient.addColorStop(0.7, "#9f8bb8");
+        gradient.addColorStop(1, "#f49080");
+
+
+                 window.chart = new Chart(ctx, {
+type: 'line',
+data: { 
+labels: datesArray, 
+datasets: [{ 
+  data: tempsArray,
+  label: "temps", 
+  borderColor: gradient,
+      pointBorderColor: gradient,
+      pointBackgroundColor: gradient,
+      pointHoverBackgroundColor: gradient,
+      pointHoverBorderColor: gradient,
+      pointBorderWidth: 7,
+      pointHoverRadius: 7,
+      pointHoverBorderWidth: 0.5,
+      pointRadius: 0.5,
+      fill: true,
+      borderWidth: 2,
+     
+}]
+},
+options: {
+legend: {
+      position: "bottom"
+  },
+  scales: {
+      yAxes: [{
+          ticks: {
+              fontColor: "#37d5d6",
+              fontStyle: "bold",
+              beginAtZero: true,
+              maxTicksLimit: 5,
+              padding: 20
+          },
+          gridLines: {
+              drawTicks: false,
+              display: false
+          }
+}],
+      xAxes: [{
+          gridLines: {
+              zeroLineColor: "transparent"
+},
+          ticks: {
+              padding: 20,
+              fontColor: "#37d5d6",
+              fontStyle: "bold"
+          }
+      }]
+  },
+title: {
+display: true,
+text: '5 day/ 6-hourly forecast'
+}
+} 
+
+});
+
+
+
+
+
+            console.log(respz.current.dt + ' This is the current dt in unix utc time');
+
+            console.log(respz.daily[0].humidity); 
+
+
+
+            let timezone = respz.timezone;  
+
+            var dateobj = new Date();  
+            var B = dateobj.toISOString(); 
+            var here = moment.tz(B, "Africa/Nairobi"); //for other apps, we'll actualy get geolocation from device/browser, God willing 
+
+            var searchedCity =here.clone().tz(timezone); 
+
+            console.log(searchedCity.format() + "is the time of the city we searched"); 
+
+            let time = document.querySelector('.time');
+            time.innerHTML = searchedCity.format('MMMM Do YYYY, h:mm a');  
+
+
+
+
+
+
+            //to get sunrise and sunset time according to searched city's timezone:
+
+            let sunriseSecondsToMills = respz.current.sunrise * 1000;  
+
+            let newDay= new Date(sunriseSecondsToMills).toISOString(); 
+
+            let sunriseTimey = moment.tz(newDay, respz.timezone); 
+
+            let sunrise = sunriseTimey.format('MMMM Do YYYY, h:mm a');  
+
+            let sunriseTime = document.querySelector('.sunrise');
+            sunriseTime.innerHTML = `Sunrise: ${sunrise}`;  
+
+
+
+            //to get sunset time according to searched city's timezone: 
+
+            let sunsetSecondsToMills = respz.current.sunset * 1000;   
+
+            let newsunSetDay = new Date(sunsetSecondsToMills).toISOString(); 
+            let sunsetTimey = moment.tz(newsunSetDay, respz.timezone); 
+
+            let sunset = sunsetTimey.format('MMMM Do YYYY, h:mm a');  
+
+            let sunsetTime = document.querySelector('.sunset');
+
+            sunsetTime.innerHTML = `Sunset: ${sunset}`; 
+
+
+
+
+
+
+
+
+
+
+
+
+          }); 
+
+
+        };//end of func displayResults here
+
+
+
+
+          getResults(citySearched);
+
+
+
+
+
+
+
+        }
+   
+
+  
+
+    } 
+
+
+
+
+
+      
+
+            
+            
+            
+           
+            
+
+
+        
+
+
+
+
+
+           });
+
+
+
+
+
+
+
+</script> 
+</body> 
+</html>
