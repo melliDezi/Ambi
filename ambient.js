@@ -1,8 +1,8 @@
-
+/*
 let airQualBtn = document.getElementById('clickMe1');  
            let airQualBlurb = document.getElementById('airQualBlurb'); 
 
-           let UVBlurb =document.getElementById('UVBlurb')
+           let UVBlurb =document.getElementById('UVBlurb')*/
 
 
            //const searchBox = document.getElementById('searchBox');
@@ -20,8 +20,8 @@ if(window.chart && window.chart !== null){
     
     
         
-          let datesArray =[]; 
-          let tempsArray =[];  
+         // let datesArray =[]; 
+          //let tempsArray =[];  
          // let humidityArray =[];
     
           
@@ -147,9 +147,9 @@ if(window.chart && window.chart !== null){
         arrayOfTempsNDates = [];  
 
 
-        localStorage["key"] = searchBox.value; 
-        console.log(localStorage["key"] + " this is the local storage!");
-        ul.style.display='none'; 
+        //localStorage["key"] = searchBox.value; 
+        //console.log(localStorage["key"] + " this is the local storage!");
+        //ul.style.display='none'; 
 
         let inputForChart=document.getElementById('inputForChart');
 
@@ -472,6 +472,11 @@ else if(hourOfSearchedCity == 29){
             time.innerHTML = searchedCity.format('MMMM Do YYYY, h:mm a'); 
 
 
+               
+            let airQualBtn = document.getElementById('clickMe1');  
+           let airQualBlurb = document.getElementById('airQualBlurb'); 
+
+           let UVBlurb =document.getElementById('UVBlurb')
 
 
             console.log(respz.current.uvi + ` is the UVI!index value for ${cityName} and the longi is ${respz.lon}`);
