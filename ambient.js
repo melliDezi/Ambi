@@ -64,7 +64,7 @@ const api= {
 
       
       
-      const searchButton = document.querySelector('.search');
+      const searchButton = document.getElementById('search');
 
 
       
