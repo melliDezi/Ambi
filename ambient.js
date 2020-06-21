@@ -64,11 +64,23 @@ const api= {
 
       
       
+      const searchButton = document.querySelector('.search');
+
+
       
       
       
-      
-      function setQuery(evt){
+      function setQuery(evt){ 
+           
+           searchButton.addEventListener("click", function(){
+          getResults(searchBox.value); 
+
+
+          let inputForChart=document.getElementById('inputForChart');
+
+          inputForChart.value=searchBox.value;
+        });
+
       
       if(evt.keyCode ==13 /*&& searchBox.value.length !==0*/){ 
 
